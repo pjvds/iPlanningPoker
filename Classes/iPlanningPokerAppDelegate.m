@@ -8,7 +8,7 @@
 
 #import "iPlanningPokerAppDelegate.h"
 #import "cocos2d.h"
-#import "HelloWorldScene.h"
+#import "MainScene.h"
 
 @implementation iPlanningPokerAppDelegate
 
@@ -50,7 +50,7 @@
 	[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA8888];	
 	
 		
-	[[CCDirector sharedDirector] runWithScene: [HelloWorld scene]];
+	[[CCDirector sharedDirector] runWithScene: [MainScene scene]];
 }
 
 
