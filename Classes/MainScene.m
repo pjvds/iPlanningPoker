@@ -10,6 +10,7 @@
 #import "MainScene.h"
 
 CCSprite *background;
+CCSprite *cardBackground;
 
 // MainScene implementation
 @implementation MainScene
@@ -39,6 +40,10 @@ CCSprite *background;
 		background = [CCSprite spriteWithFile:@"Background.png"];
 		background.position = ccp(0,0);
 		[self addChild: background];
+		
+		cardBackground = [CCSprite spriteWithFile:@"CardBackground.png"];
+		cardBackground.position = ccp(cardBackground.contentSize.width / 2,cardBackground.contentSize.height / 2);
+		[self addChild: cardBackground];
 	}
 	return self;
 }
