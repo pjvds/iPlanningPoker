@@ -12,9 +12,11 @@
 
 CCSprite *background;
 CCSprite *cardBackground;
+CCSprite *cardNeighbour;
 
 CGPoint whereTouch;
 CGPoint cardCenterLocation;
+float neighbourOffset;
 BOOL isDrag;
 
 // MainScene implementation
@@ -49,8 +51,14 @@ BOOL isDrag;
 		cardBackground = [CCSprite spriteWithFile:@"CardBackground.png"];
 		cardCenterLocation = ccp(cardBackground.contentSize.width / 2,cardBackground.contentSize.height / 2);
 		cardBackground.position = cardCenterLocation;
-		
 		[self addChild: cardBackground];
+		
+		cardNeighbour = [CCSprite spriteWithFile:@"CardBackground.png"];
+		cardNeighbour.position = cardCenterLocation;
+		cardNeighbour.visible = NO;
+		[self addChild: cardNeighbour];
+		
+		[self schedule:@selector(nextFrame:)];
 		
 		// register to receive targeted touch events
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self
@@ -58,6 +66,22 @@ BOOL isDrag;
 											  swallowsTouches:YES];
 	}
 	return self;
+}
+
+- (void) nextFrame:(ccTime)dt {
+	if(cardBackground.position.x == cardCenterLocation.x) {
+		cardNeighbour.visible = NO;
+		return;
+	}
+	
+	cardNeighbour.visible = YES;
+	
+	if(cardBackground.position.x < cardCenterLocation.x) {
+		cardNeighbour.position = ccp(cardBackground.position.x + cardBackground.contentSize.width, cardNeighbour.position.y);
+	}
+	else {
+		cardNeighbour.position = ccp(cardBackground.position.x - cardBackground.contentSize.width, cardNeighbour.position.y);		
+	}
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -84,6 +108,8 @@ BOOL isDrag;
 }
 
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+	isDrag=NO;
+	
 	CGPoint location = [touch locationInView: [touch view]];
 	CGPoint convertedLocation = [[CCDirector sharedDirector] convertToGL:cardCenterLocation];
 	
