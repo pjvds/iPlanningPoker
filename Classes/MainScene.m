@@ -9,6 +9,8 @@
 // Import the interfaces
 #import "MainScene.h"
 
+CCSprite *background;
+
 // MainScene implementation
 @implementation MainScene
 
@@ -34,17 +36,9 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init] )) {
 		
-		// create and initialize a Label
-		CCLabel* label = [CCLabel labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
-
-		// ask director the the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
-	
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , size.height/2 );
-		
-		// add the label as a child to this Layer
-		[self addChild: label];
+		background = [CCSprite spriteWithFile:@"Background.png"];
+		background.position = ccp(0,0);
+		[self addChild: background];
 	}
 	return self;
 }
@@ -55,6 +49,7 @@
 	// in case you have something to dealloc, do it in this method
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)
+	[background release];
 	
 	// don't forget to call "super dealloc"
 	[super dealloc];
