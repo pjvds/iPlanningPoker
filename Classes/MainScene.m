@@ -45,7 +45,7 @@ BOOL isDrag;
 	if( (self=[super init] )) {
 		
 		background = [CCSprite spriteWithFile:@"Background.png"];
-		background.position = ccp(0,0);
+		background.position = ccp(background.contentSize.width / 2,background.contentSize.height / 2);
 		[self addChild: background];
 		
 		cardBackground = [CCSprite spriteWithFile:@"CardBackground.png"];
