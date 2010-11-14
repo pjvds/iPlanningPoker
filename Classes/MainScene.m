@@ -8,9 +8,13 @@
 
 // Import the interfaces
 #import "MainScene.h"
+#import "CCTouchDispatcher.h"
 
 CCSprite *background;
 CCSprite *cardBackground;
+
+CGPoint whereTouch;
+BOOL isDrag;
 
 // MainScene implementation
 @implementation MainScene
@@ -44,8 +48,40 @@ CCSprite *cardBackground;
 		cardBackground = [CCSprite spriteWithFile:@"CardBackground.png"];
 		cardBackground.position = ccp(cardBackground.contentSize.width / 2,cardBackground.contentSize.height / 2);
 		[self addChild: cardBackground];
+		
+		// register to receive targeted touch events
+        [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self
+											  priority:0
+											  swallowsTouches:YES];
 	}
 	return self;
+}
+
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+	CGPoint touchPoint = [touch locationInView:[touch view]];
+	touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
+	
+	if([self isTouchOnSprite:touchPoint]){
+		isDrag=YES;
+		whereTouch=ccpSub(cardBackground.position, touchPoint);
+		return YES;
+	}
+    return NO;
+}
+
+- (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+{
+	CGPoint touchPoint = [touch locationInView:[touch view]];
+	touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
+	cardBackground.position=ccpAdd(touchPoint,whereTouch);
+}
+
+-(BOOL) isTouchOnSprite:(CGPoint)touch{
+	return YES;
+}
+
+- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+
 }
 
 // on "dealloc" you need to release all your retained objects
