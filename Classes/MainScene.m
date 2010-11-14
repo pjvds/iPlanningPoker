@@ -76,7 +76,7 @@ BOOL isDrag;
 {
 	CGPoint touchPoint = [touch locationInView:[touch view]];
 	touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
-	cardBackground.position=ccpAdd(touchPoint,whereTouch);
+	cardBackground.position= ccp(touchPoint.x + whereTouch.x, cardBackground.position.y);
 }
 
 -(BOOL) isTouchOnSprite:(CGPoint)touch{
