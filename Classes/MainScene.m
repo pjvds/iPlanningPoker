@@ -14,6 +14,7 @@ CCSprite *background;
 CCSprite *cardBackground;
 
 CGPoint whereTouch;
+CGPoint cardCenterLocation;
 BOOL isDrag;
 
 // MainScene implementation
@@ -46,7 +47,9 @@ BOOL isDrag;
 		[self addChild: background];
 		
 		cardBackground = [CCSprite spriteWithFile:@"CardBackground.png"];
-		cardBackground.position = ccp(cardBackground.contentSize.width / 2,cardBackground.contentSize.height / 2);
+		cardCenterLocation = ccp(cardBackground.contentSize.width / 2,cardBackground.contentSize.height / 2);
+		cardBackground.position = cardCenterLocation;
+		
 		[self addChild: cardBackground];
 		
 		// register to receive targeted touch events
@@ -81,7 +84,11 @@ BOOL isDrag;
 }
 
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
-
+	CGPoint location = [touch locationInView: [touch view]];
+	CGPoint convertedLocation = [[CCDirector sharedDirector] convertToGL:cardCenterLocation];
+	
+	[cardBackground stopAllActions];
+	[cardBackground runAction: [CCMoveTo actionWithDuration:0.2 position:convertedLocation]];
 }
 
 // on "dealloc" you need to release all your retained objects
