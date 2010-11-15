@@ -124,6 +124,8 @@ BOOL isDrag;
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)
 	[background release];
+	[cardBackground release];
+	[cardNeighbour release];
 	
 	// don't forget to call "super dealloc"
 	[super dealloc];
