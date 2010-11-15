@@ -85,7 +85,10 @@ BOOL isDrag;
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-	CGPoint touchPoint = [touch locationInView:[touch view]];
+	// Do not allow a second touch.
+    if(isDrag) return NO;
+    
+    CGPoint touchPoint = [touch locationInView:[touch view]];
 	touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
 	
 	if([self isTouchOnSprite:touchPoint]){
