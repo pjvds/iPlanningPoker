@@ -24,6 +24,8 @@ CCSprite *background;
         background = [CCSprite spriteWithFile:@"CardBackground.png"];
 		background.position = ccp(background.contentSize.width / 2,background.contentSize.height / 2);
 		[self addChild: background];
+		
+		[self setContentSize: background.contentSize];
     }
     
     return self;
