@@ -101,10 +101,13 @@ BOOL isDrag;
 }
 
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
-{
+{	
 	CGPoint touchPoint = [touch locationInView:[touch view]];
 	touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
-	selectedCard.position= ccp(touchPoint.x + whereTouch.x, selectedCard.position.y);
+	CGPoint newPosition = ccp(touchPoint.x + whereTouch.x, selectedCard.position.y);
+	selectedCard.position= newPosition;
+	
+	NSLog([NSString stringWithFormat:@"X=%f", newPosition.x]);
 }
 
 -(BOOL) isTouchOnSprite:(CGPoint)touch{
