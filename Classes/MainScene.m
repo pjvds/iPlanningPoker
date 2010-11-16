@@ -9,9 +9,10 @@
 // Import the interfaces
 #import "MainScene.h"
 #import "CCTouchDispatcher.h"
+#import "Card.h"
 
 CCSprite *background;
-CCSprite *cardBackground;
+Card *selectedCard;
 CCSprite *cardNeighbour;
 
 CGPoint whereTouch;
@@ -48,17 +49,17 @@ BOOL isDrag;
 		background.position = ccp(background.contentSize.width / 2,background.contentSize.height / 2);
 		[self addChild: background];
 		
-		cardBackground = [CCSprite spriteWithFile:@"CardBackground.png"];
-		cardCenterLocation = ccp(cardBackground.contentSize.width / 2,cardBackground.contentSize.height / 2);
-		cardBackground.position = cardCenterLocation;
-		[self addChild: cardBackground];
+		selectedCard = [Card node];
+		cardCenterLocation = ccp(selectedCard.contentSize.width / 2,selectedCard.contentSize.height / 2);
+		selectedCard.position = cardCenterLocation;
+		[self addChild: selectedCard];
 		
-		cardNeighbour = [CCSprite spriteWithFile:@"CardBackground.png"];
+		/*cardNeighbour = [CCSprite spriteWithFile:@"selectedCard.png"];
 		cardNeighbour.position = cardCenterLocation;
 		cardNeighbour.visible = NO;
 		[self addChild: cardNeighbour];
 		
-		[self schedule:@selector(nextFrame:)];
+		[self schedule:@selector(nextFrame:)];*/
 		
 		// register to receive targeted touch events
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self
@@ -69,18 +70,18 @@ BOOL isDrag;
 }
 
 - (void) nextFrame:(ccTime)dt {
-	if(cardBackground.position.x == cardCenterLocation.x) {
+	if(selectedCard.position.x == cardCenterLocation.x) {
 		cardNeighbour.visible = NO;
 		return;
 	}
 	
 	cardNeighbour.visible = YES;
 	
-	if(cardBackground.position.x < cardCenterLocation.x) {
-		cardNeighbour.position = ccp(cardBackground.position.x + cardBackground.contentSize.width, cardNeighbour.position.y);
+	if(selectedCard.position.x < cardCenterLocation.x) {
+		cardNeighbour.position = ccp(selectedCard.position.x + selectedCard.contentSize.width, cardNeighbour.position.y);
 	}
 	else {
-		cardNeighbour.position = ccp(cardBackground.position.x - cardBackground.contentSize.width, cardNeighbour.position.y);		
+		cardNeighbour.position = ccp(selectedCard.position.x - selectedCard.contentSize.width, cardNeighbour.position.y);		
 	}
 }
 
@@ -93,7 +94,7 @@ BOOL isDrag;
 	
 	if([self isTouchOnSprite:touchPoint]){
 		isDrag=YES;
-		whereTouch=ccpSub(cardBackground.position, touchPoint);
+		whereTouch=ccpSub(selectedCard.position, touchPoint);
 		return YES;
 	}
     return NO;
@@ -103,7 +104,7 @@ BOOL isDrag;
 {
 	CGPoint touchPoint = [touch locationInView:[touch view]];
 	touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
-	cardBackground.position= ccp(touchPoint.x + whereTouch.x, cardBackground.position.y);
+	selectedCard.position= ccp(touchPoint.x + whereTouch.x, selectedCard.position.y);
 }
 
 -(BOOL) isTouchOnSprite:(CGPoint)touch{
@@ -116,8 +117,8 @@ BOOL isDrag;
 	CGPoint location = [touch locationInView: [touch view]];
 	CGPoint convertedLocation = [[CCDirector sharedDirector] convertToGL:cardCenterLocation];
 	
-	[cardBackground stopAllActions];
-	[cardBackground runAction: [CCMoveTo actionWithDuration:0.2 position:convertedLocation]];
+	[selectedCard stopAllActions];
+	[selectedCard runAction: [CCMoveTo actionWithDuration:0.2 position:convertedLocation]];
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -127,7 +128,7 @@ BOOL isDrag;
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)
 	[background release];
-	[cardBackground release];
+	[selectedCard release];
 	[cardNeighbour release];
 	
 	// don't forget to call "super dealloc"
