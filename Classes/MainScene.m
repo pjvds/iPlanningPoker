@@ -89,6 +89,8 @@ BOOL isDrag;
 	// Do not allow a second touch.
     if(isDrag) return NO;
     
+	[selectedCard stopAllActions];
+	
     CGPoint touchPoint = [touch locationInView:[touch view]];
 	touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
 	
