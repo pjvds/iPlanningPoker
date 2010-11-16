@@ -216,6 +216,7 @@
 		50F414F01069373D002A0D5E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EC1069373D002A0D5E /* Default.png */; };
 		50F414F11069373D002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414ED1069373D002A0D5E /* fps_images.png */; };
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
+		DA098BD9129326E500A9E0A3 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = DA098BD8129326E500A9E0A3 /* Card.m */; };
 		DA7EDCB01290391800F14955 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7EDCAE1290391800F14955 /* Background.png */; };
 		DA7EDCB11290391800F14955 /* CardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7EDCAF1290391800F14955 /* CardBackground.png */; };
 		DAEB86131291B0DA00DF5963 /* Number20.png in Resources */ = {isa = PBXBuildFile; fileRef = DAEB860C1291B0DA00DF5963 /* Number20.png */; };
@@ -448,6 +449,8 @@
 		50F414ED1069373D002A0D5E /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		50F414EE1069373D002A0D5E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		50F414EF1069373D002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA098BD7129326E500A9E0A3 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		DA098BD8129326E500A9E0A3 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		DA7EDCAE1290391800F14955 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		DA7EDCAF1290391800F14955 /* CardBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CardBackground.png; sourceTree = "<group>"; };
 		DAEB860C1291B0DA00DF5963 /* Number20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Number20.png; sourceTree = "<group>"; };
@@ -547,6 +550,8 @@
 		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DA098BD7129326E500A9E0A3 /* Card.h */,
+				DA098BD8129326E500A9E0A3 /* Card.m */,
 				506EDC2F102F528A00A389B3 /* MainScene.h */,
 				506EDC30102F528A00A389B3 /* MainScene.m */,
 				1F3B9A2C0EF2145700286867 /* iPlanningPokerAppDelegate.h */,
@@ -1038,6 +1043,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1F3B9A2D0EF2145700286867 /* iPlanningPokerAppDelegate.m in Sources */,
 				506EDC31102F528A00A389B3 /* MainScene.m in Sources */,
+				DA098BD9129326E500A9E0A3 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
