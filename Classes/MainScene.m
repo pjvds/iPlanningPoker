@@ -121,6 +121,12 @@ BOOL isDrag;
 	
 	//CGPoint convertedLocation = [[CCDirector sharedDirector] convertToGL:cardCenterLocation];
 	
+	if(selectedCard.position.x < -154 || selectedCard.position.x > 154){
+		Card *temp = selectedCard;
+		selectedCard = neighbourCard;
+		neighbourCard = temp;
+	}		
+	
 	[selectedCard stopAllActions];
 	[selectedCard runAction: [CCMoveTo actionWithDuration:0.2 position:cardCenterLocation]];
 }
