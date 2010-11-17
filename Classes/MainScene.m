@@ -15,6 +15,8 @@ CCSprite *background;
 Card *selectedCard;
 Card *neighbourCard;
 
+SymbolList *symbols;
+
 CGPoint whereTouch;
 CGPoint cardCenterLocation;
 float neighbourOffset;
@@ -46,12 +48,17 @@ BOOL isDrag;
 	if( (self=[super init] )) {
 		[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA4444];
 		
+		symbols = [[SymbolList alloc] init];
+		
 		background = [CCSprite spriteWithFile:@"Background.png"];
 		background.position = ccp(background.contentSize.width / 2,background.contentSize.height / 2);
 		[self addChild: background];
 		
 		selectedCard = [Card node];
 		selectedCard.position = cardCenterLocation;
+		
+		CCSprite* firstSymbol = [symbols get:0];
+		[selectedCard setSymbol: firstSymbol];
 		[self addChild: selectedCard];
 		
 		neighbourCard = [Card node];

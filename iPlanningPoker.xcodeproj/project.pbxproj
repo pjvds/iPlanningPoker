@@ -217,6 +217,9 @@
 		50F414F11069373D002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414ED1069373D002A0D5E /* fps_images.png */; };
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
 		DA098BD9129326E500A9E0A3 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = DA098BD8129326E500A9E0A3 /* Card.m */; };
+		DA098CB212945BBA00A9E0A3 /* 20.png in Resources */ = {isa = PBXBuildFile; fileRef = DA098CB012945BBA00A9E0A3 /* 20.png */; };
+		DA098CB312945BBA00A9E0A3 /* 40.png in Resources */ = {isa = PBXBuildFile; fileRef = DA098CB112945BBA00A9E0A3 /* 40.png */; };
+		DA098CB9129461B300A9E0A3 /* SymbolList.m in Sources */ = {isa = PBXBuildFile; fileRef = DA098CB8129461B300A9E0A3 /* SymbolList.m */; };
 		DA7EDCB01290391800F14955 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7EDCAE1290391800F14955 /* Background.png */; };
 		DA7EDCB11290391800F14955 /* CardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7EDCAF1290391800F14955 /* CardBackground.png */; };
 		DAEB86131291B0DA00DF5963 /* Number20.png in Resources */ = {isa = PBXBuildFile; fileRef = DAEB860C1291B0DA00DF5963 /* Number20.png */; };
@@ -451,6 +454,10 @@
 		50F414EF1069373D002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA098BD7129326E500A9E0A3 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		DA098BD8129326E500A9E0A3 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		DA098CB012945BBA00A9E0A3 /* 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20.png; sourceTree = "<group>"; };
+		DA098CB112945BBA00A9E0A3 /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 40.png; sourceTree = "<group>"; };
+		DA098CB7129461B300A9E0A3 /* SymbolList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymbolList.h; sourceTree = "<group>"; };
+		DA098CB8129461B300A9E0A3 /* SymbolList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymbolList.m; sourceTree = "<group>"; };
 		DA7EDCAE1290391800F14955 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		DA7EDCAF1290391800F14955 /* CardBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CardBackground.png; sourceTree = "<group>"; };
 		DAEB860C1291B0DA00DF5963 /* Number20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Number20.png; sourceTree = "<group>"; };
@@ -556,6 +563,8 @@
 				506EDC30102F528A00A389B3 /* MainScene.m */,
 				1F3B9A2C0EF2145700286867 /* iPlanningPokerAppDelegate.h */,
 				1F3B9A2B0EF2145700286867 /* iPlanningPokerAppDelegate.m */,
+				DA098CB7129461B300A9E0A3 /* SymbolList.h */,
+				DA098CB8129461B300A9E0A3 /* SymbolList.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -832,6 +841,8 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DA098CB012945BBA00A9E0A3 /* 20.png */,
+				DA098CB112945BBA00A9E0A3 /* 40.png */,
 				DAEB860C1291B0DA00DF5963 /* Number20.png */,
 				DA7EDCAE1290391800F14955 /* Background.png */,
 				DA7EDCAF1290391800F14955 /* CardBackground.png */,
@@ -1030,6 +1041,8 @@
 				DA7EDCB01290391800F14955 /* Background.png in Resources */,
 				DA7EDCB11290391800F14955 /* CardBackground.png in Resources */,
 				DAEB86131291B0DA00DF5963 /* Number20.png in Resources */,
+				DA098CB212945BBA00A9E0A3 /* 20.png in Resources */,
+				DA098CB312945BBA00A9E0A3 /* 40.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1044,6 +1057,7 @@
 				1F3B9A2D0EF2145700286867 /* iPlanningPokerAppDelegate.m in Sources */,
 				506EDC31102F528A00A389B3 /* MainScene.m in Sources */,
 				DA098BD9129326E500A9E0A3 /* Card.m in Sources */,
+				DA098CB9129461B300A9E0A3 /* SymbolList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

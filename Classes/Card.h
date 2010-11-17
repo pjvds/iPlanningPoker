@@ -15,4 +15,5 @@
 {
 }
 
+-(void) setSymbol:(CCSprite*) value;
 @end

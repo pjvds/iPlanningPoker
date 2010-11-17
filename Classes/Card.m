@@ -9,11 +9,11 @@
 #import "Card.h"
 
 CCSprite *background;
+CCSprite *symbol;
 
 @implementation Card
 
-+(id) node
-{
++(id) node {
 	return [[[self alloc] init] autorelease];
 }
 
@@ -29,6 +29,19 @@ CCSprite *background;
     }
     
     return self;
+}
+
+-(void) setSymbol:(CCSprite*) value{
+	if(symbol != value){
+		if(symbol != nil){
+			[self removeChild: symbol];
+		}
+		
+		symbol = value;
+		symbol.position = ccp(150, 150);
+		
+		[self addChild: symbol z:5];
+	}
 }
 
 @end
