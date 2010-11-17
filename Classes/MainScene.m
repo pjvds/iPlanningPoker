@@ -44,6 +44,7 @@ BOOL isDrag;
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init] )) {
+		[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA4444];
 		
 		background = [CCSprite spriteWithFile:@"Background.png"];
 		background.position = ccp(background.contentSize.width / 2,background.contentSize.height / 2);
