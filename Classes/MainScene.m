@@ -51,7 +51,6 @@ BOOL isDrag;
 		[self addChild: background];
 		
 		selectedCard = [Card node];
-		//cardCenterLocation = ccp(selectedCard.contentSize.width / 2,selectedCard.contentSize.height / 2);
 		selectedCard.position = cardCenterLocation;
 		[self addChild: selectedCard];
 		
@@ -119,8 +118,6 @@ BOOL isDrag;
 
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
 	isDrag=NO;
-	
-	//CGPoint convertedLocation = [[CCDirector sharedDirector] convertToGL:cardCenterLocation];
 	
 	if(selectedCard.position.x < -154 || selectedCard.position.x > 154){
 		Card *temp = selectedCard;
