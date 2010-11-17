@@ -11,7 +11,7 @@
 
 @interface SymbolList : NSObject {
 @private
-	NSMutableArray *symbols;
+	NSMutableArray *innerList;
 }
 
 -(SymbolList *) init;

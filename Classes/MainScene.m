@@ -11,17 +11,6 @@
 #import "CCTouchDispatcher.h"
 #import "Card.h"
 
-CCSprite *background;
-Card *selectedCard;
-Card *neighbourCard;
-
-SymbolList *symbols;
-
-CGPoint whereTouch;
-CGPoint cardCenterLocation;
-float neighbourOffset;
-BOOL isDrag;
-
 // MainScene implementation
 @implementation MainScene
 
@@ -57,7 +46,8 @@ BOOL isDrag;
 		selectedCard = [Card node];
 		selectedCard.position = cardCenterLocation;
 		
-		CCSprite* firstSymbol = [symbols get:0];
+		selectedSymbolIndex = 0;
+		CCSprite* firstSymbol = [symbols get:selectedSymbolIndex];
 		[selectedCard setSymbol: firstSymbol];
 		[self addChild: selectedCard];
 		
@@ -86,9 +76,11 @@ BOOL isDrag;
 	
 	if(selectedCard.position.x < cardCenterLocation.x) {
 		neighbourCard.position = ccp(selectedCard.position.x + selectedCard.contentSize.width, neighbourCard.position.y);
+		[neighbourCard setSymbol: [symbols getBefore: selectedSymbolIndex]];
 	}
 	else {
-		neighbourCard.position = ccp(selectedCard.position.x - selectedCard.contentSize.width, neighbourCard.position.y);		
+		neighbourCard.position = ccp(selectedCard.position.x - selectedCard.contentSize.width, neighbourCard.position.y);
+		[neighbourCard setSymbol: [symbols getAfter: selectedSymbolIndex]];
 	}
 }
 
@@ -130,7 +122,7 @@ BOOL isDrag;
 		Card *temp = selectedCard;
 		selectedCard = neighbourCard;
 		neighbourCard = temp;
-	}		
+	}
 	
 	[selectedCard stopAllActions];
 	[selectedCard runAction: [CCMoveTo actionWithDuration:0.2 position:cardCenterLocation]];

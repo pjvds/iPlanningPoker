@@ -22,20 +22,21 @@
 		[buffer addObject:one];
 		[buffer addObject:two];
 	
-		symbols = buffer;
+		innerList = buffer;
+		[innerList retain];
 	}
     
     return self;
 }
 
 -(CCSprite*) get: (int)index {
-	return [symbols objectAtIndex:index];
+	return [innerList objectAtIndex:index];
 }
 
 -(CCSprite*) getBefore: (int)index{
-	int newIndex = index++;
+	int newIndex = index+1;
 	
-	if(newIndex > [self size]){
+	if(newIndex > [innerList count]){
 		newIndex = 0;
 	}
 	
@@ -43,16 +44,16 @@
 }
 
 -(CCSprite*) getAfter: (int)index{
-	int newIndex = index--;
+	int newIndex = index-1;
 	
 	if(newIndex < 0){
-		newIndex = [self size]-1;
+		newIndex = [innerList count]-1;
 	}
 	
 	return [self get:newIndex];
 }
 -(int) size {
-	return [symbols count];
+	return [innerList count];
 }
 
 @end

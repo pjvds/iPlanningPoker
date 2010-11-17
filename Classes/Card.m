@@ -34,7 +34,7 @@ CCSprite *symbol;
 -(void) setSymbol:(CCSprite*) value{
 	if(symbol != value){
 		if(symbol != nil){
-			[self removeChild: symbol];
+			[self removeChild: symbol cleanup: NO];
 		}
 		
 		symbol = value;
