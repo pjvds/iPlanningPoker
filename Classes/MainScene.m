@@ -37,11 +37,9 @@
 	if( (self=[super init] )) {
 		[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA4444];
 		
-		symbols = [[SymbolList alloc] init];
+		[self initBackground];
 		
-		background = [CCSprite spriteWithFile:@"Background.png"];
-		background.position = ccp(background.contentSize.width / 2,background.contentSize.height / 2);
-		[self addChild: background];
+		symbols = [[SymbolList alloc] init];
 		
 		selectedCard = [Card node];
 		selectedCard.position = cardCenterLocation;
@@ -64,6 +62,15 @@
 											  swallowsTouches:YES];
 	}
 	return self;
+}
+
+- (void) initBackground{
+	CGSize winSize = [[CCDirector sharedDirector] winSize];
+	
+	CCSprite* background = [CCSprite spriteWithFile:@"Background.png"];
+	background.position = ccp(winSize.width / 2, winSize.height / 2);
+	
+	[self addChild: background];
 }
 
 - (void) nextFrame:(ccTime)dt {
@@ -134,7 +141,6 @@
 	// in case you have something to dealloc, do it in this method
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)
-	[background release];
 	[selectedCard release];
 	[neighbourCard release];
 	
