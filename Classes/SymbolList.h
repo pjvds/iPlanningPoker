@@ -18,6 +18,7 @@
 -(CCSprite *) get: (int)index;
 -(CCSprite *) getBefore: (int)index;
 -(CCSprite *) getAfter: (int)index;
+-(int) indexOf: (CCSprite*) symbol;
 -(int) size;
 
 @end

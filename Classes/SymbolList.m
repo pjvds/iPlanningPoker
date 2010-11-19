@@ -54,6 +54,11 @@
 	
 	return [self get:newIndex];
 }
+
+-(int) indexOf: (CCSprite*) symbol{
+	return [innerList indexOfObject: symbol];
+}
+
 -(int) size {
 	return [innerList count];
 }

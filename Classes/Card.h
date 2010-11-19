@@ -9,6 +9,7 @@
 
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
+#import "SymbolList.h"
 
 // MainScene Layer
 @interface Card : CCNode
@@ -17,6 +18,8 @@
 	CGPoint center;
 	
 }
-+(id) node;
++(id) init;
+-(Card*) init;
 -(void) setSymbol:(CCSprite*) value;
+-(CCSprite*) getSymbol;
 @end

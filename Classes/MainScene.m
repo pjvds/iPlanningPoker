@@ -41,7 +41,7 @@
 		
 		symbols = [[SymbolList alloc] init];
 		
-		selectedCard = [Card node];
+		selectedCard = [Card init];
 		selectedCard.position = cardCenterLocation;
 		
 		selectedSymbolIndex = 0;
@@ -49,7 +49,7 @@
 		[selectedCard setSymbol: firstSymbol];
 		[self addChild: selectedCard];
 		
-		neighbourCard = [Card node];
+		neighbourCard = [Card init];
 		neighbourCard.position = cardCenterLocation;
 		neighbourCard.visible = NO;
 		[self addChild: neighbourCard];
@@ -126,6 +126,11 @@
 	isDrag=NO;
 	
 	if(selectedCard.position.x < -32 || selectedCard.position.x > 32){
+		int indexOfNeighbourSymbol = [symbols indexOf:[neighbourCard getSymbol]];
+		selectedSymbolIndex = indexOfNeighbourSymbol;
+		
+		NSLog([NSString stringWithFormat:@"Selected=%i", selectedSymbolIndex]);
+		
 		Card *temp = selectedCard;
 		selectedCard = neighbourCard;
 		neighbourCard = temp;
