@@ -125,14 +125,14 @@
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
 	isDrag=NO;
 	
-	if(selectedCard.position.x < -154 || selectedCard.position.x > 154){
+	if(selectedCard.position.x < -32 || selectedCard.position.x > 32){
 		Card *temp = selectedCard;
 		selectedCard = neighbourCard;
 		neighbourCard = temp;
 	}
 	
 	[selectedCard stopAllActions];
-	[selectedCard runAction: [CCMoveTo actionWithDuration:0.2 position:cardCenterLocation]];
+	[selectedCard runAction: [CCMoveTo actionWithDuration:0.15 position:cardCenterLocation]];
 }
 
 // on "dealloc" you need to release all your retained objects
