@@ -67,10 +67,10 @@
 - (void) initBackground{
 	CGSize winSize = [[CCDirector sharedDirector] winSize];
 	
-	CCSprite* background = [CCSprite spriteWithFile:@"Background.png"];
-	background.position = ccp(winSize.width / 2, winSize.height / 2);
+	CCSprite* bg = [CCSprite spriteWithFile:@"Background.png"];
+	bg.position = ccp(winSize.width / 2, winSize.height / 2);
 	
-	[self addChild: background];
+	[self addChild: bg];
 }
 
 - (void) nextFrame:(ccTime)dt {

@@ -31,5 +31,7 @@
 
 // returns a Scene that contains the MainScene as the only child
 +(id) scene;
+-(void) initBackground;
+-(BOOL) isTouchOnSprite:(CGPoint)touch;
 
 @end
