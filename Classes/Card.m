@@ -8,11 +8,6 @@
 
 #import "Card.h"
 
-CCSprite *background;
-CCSprite *symbol;
-SymbolList *symbols;
-int currentIndex = -1;
-
 @implementation Card
 
 +(id) cardWithSymbols: (SymbolList*) theSymbols{
@@ -23,7 +18,7 @@ int currentIndex = -1;
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init] )) {
-		
+		currentIndex = -1;
 		symbols = theSymbols;
 		
         background = [CCSprite spriteWithFile:@"CardBackground.png"];
@@ -39,8 +34,8 @@ int currentIndex = -1;
 
 -(void) setSymbol:(int) index{
 	if(currentIndex != index){
-		if(currentIndex != -1){
-			[self removeChild: [symbols get: currentIndex] cleanup: YES];
+		if(symbol != nil){
+			[self removeChild: symbol cleanup:YES];
 		}
 		
 		currentIndex = index;
@@ -50,8 +45,8 @@ int currentIndex = -1;
 	}
 }
 
--(CCSprite*) getSymbol{
-	return symbol;
+-(int) getSymbol{
+	return currentIndex;
 }
 
 @end

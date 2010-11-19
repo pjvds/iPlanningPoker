@@ -72,7 +72,7 @@
 	[self addChild: bg];
 }
 
-- (void) nextFrame:(ccTime)dt {
+- (void) nextFrame:(ccTime)dt {	
 	if(selectedCard.position.x == cardCenterLocation.x) {
 		neighbourCard.visible = NO;
 		return;
@@ -129,7 +129,7 @@
 	isDrag=NO;
 	
 	if(selectedCard.position.x < -32 || selectedCard.position.x > 32){
-		int indexOfNeighbourSymbol = [symbols indexOf:[neighbourCard getSymbol]];
+		int indexOfNeighbourSymbol = [neighbourCard getSymbol];
 		selectedSymbolIndex = indexOfNeighbourSymbol;
 		
 		NSLog([NSString stringWithFormat:@"Selected=%i", selectedSymbolIndex]);

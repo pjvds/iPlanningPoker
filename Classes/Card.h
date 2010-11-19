@@ -16,6 +16,10 @@
 {
 @private
 	CGPoint center;
+	CCSprite *background;
+	CCSprite *symbol;
+	SymbolList *symbols;
+	int currentIndex;
 	
 }
 +(id) init;
