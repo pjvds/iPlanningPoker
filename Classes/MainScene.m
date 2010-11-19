@@ -41,15 +41,14 @@
 		
 		symbols = [[SymbolList alloc] init];
 		
-		selectedCard = [Card init];
+		selectedCard = [Card cardWithSymbols:symbols];
 		selectedCard.position = cardCenterLocation;
 		
 		selectedSymbolIndex = 0;
-		CCSprite* firstSymbol = [symbols get:selectedSymbolIndex];
-		[selectedCard setSymbol: firstSymbol];
+		[selectedCard setSymbol: selectedSymbolIndex];
 		[self addChild: selectedCard];
 		
-		neighbourCard = [Card init];
+		neighbourCard = [Card cardWithSymbols:symbols];
 		neighbourCard.position = cardCenterLocation;
 		neighbourCard.visible = NO;
 		[self addChild: neighbourCard];
@@ -83,11 +82,15 @@
 	
 	if(selectedCard.position.x < cardCenterLocation.x) {
 		neighbourCard.position = ccp(selectedCard.position.x + selectedCard.contentSize.width, neighbourCard.position.y);
-		[neighbourCard setSymbol: [symbols getBefore: selectedSymbolIndex]];
+		int neighbourSymbolIndex = selectedSymbolIndex + 1;
+		neighbourSymbolIndex = neighbourSymbolIndex % [symbols size];
+		[neighbourCard setSymbol: neighbourSymbolIndex];
 	}
 	else {
 		neighbourCard.position = ccp(selectedCard.position.x - selectedCard.contentSize.width, neighbourCard.position.y);
-		[neighbourCard setSymbol: [symbols getAfter: selectedSymbolIndex]];
+		int neighbourSymbolIndex = selectedSymbolIndex - 1;
+		neighbourSymbolIndex = neighbourSymbolIndex % [symbols size];
+		[neighbourCard setSymbol: neighbourSymbolIndex];
 	}
 }
 

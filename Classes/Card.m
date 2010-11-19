@@ -9,18 +9,22 @@
 #import "Card.h"
 
 CCSprite *background;
+CCSprite *symbol;
 SymbolList *symbols;
+int currentIndex = -1;
 
 @implementation Card
 
-+(id) init {
-	return [[[self alloc] init] autorelease];
++(id) cardWithSymbols: (SymbolList*) theSymbols{
+	return [[[self alloc] initWithSymbols:theSymbols] autorelease];
 }
 
--(Card*) init {
+-(Card*) initWithSymbols: (SymbolList*) theSymbols {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init] )) {
+		
+		symbols = theSymbols;
 		
         background = [CCSprite spriteWithFile:@"CardBackground.png"];
 		[self setContentSize: background.contentSize];
@@ -33,13 +37,14 @@ SymbolList *symbols;
     return self;
 }
 
--(void) setSymbol:(CCSprite*) value{
-	if(symbol != value){
-		if(symbol != nil){
-			[self removeChild: symbol cleanup: YES];
+-(void) setSymbol:(int) index{
+	if(currentIndex != index){
+		if(currentIndex != -1){
+			[self removeChild: [symbols get: currentIndex] cleanup: YES];
 		}
 		
-		symbol = value;
+		currentIndex = index;
+		symbol = [symbols get: currentIndex];
 		symbol.position = center;
 		[self addChild: symbol];
 	}
