@@ -16,12 +16,14 @@
 	if(self) {
 		NSMutableArray *buffer = [NSMutableArray array];
 		
-		CCSprite* one = [CCSprite spriteWithFile:@"20.png"];
-		CCSprite* two = [CCSprite spriteWithFile:@"40.png"];
+		[buffer addObject:[CCSprite spriteWithFile:@"unknown.png"]];
+		[buffer addObject:[CCSprite spriteWithFile:@"0.png"]];
+		[buffer addObject:[CCSprite spriteWithFile:@"half.png"]];
+		[buffer addObject:[CCSprite spriteWithFile:@"1.png"]];
+		[buffer addObject:[CCSprite spriteWithFile:@"2.png"]];
+		[buffer addObject:[CCSprite spriteWithFile:@"3.png"]];
+		[buffer addObject:[CCSprite spriteWithFile:@"5.png"]];
 		
-		[buffer addObject:one];
-		[buffer addObject:two];
-	
 		innerList = buffer;
 		[innerList retain];
 	}
