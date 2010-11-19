@@ -20,5 +20,7 @@
 -(CCSprite *) getAfter: (int)index;
 -(int) indexOf: (CCSprite*) symbol;
 -(int) size;
+-(int) maxIndex;
+-(int) minIndex;
 
 @end

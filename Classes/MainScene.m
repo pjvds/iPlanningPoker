@@ -83,12 +83,15 @@
 	if(selectedCard.position.x < cardCenterLocation.x) {
 		neighbourCard.position = ccp(selectedCard.position.x + selectedCard.contentSize.width, neighbourCard.position.y);
 		int neighbourSymbolIndex = selectedSymbolIndex + 1;
+		if(neighbourSymbolIndex > [symbols maxIndex]) neighbourSymbolIndex = [symbols minIndex];
 		neighbourSymbolIndex = neighbourSymbolIndex % [symbols size];
 		[neighbourCard setSymbol: neighbourSymbolIndex];
 	}
 	else {
 		neighbourCard.position = ccp(selectedCard.position.x - selectedCard.contentSize.width, neighbourCard.position.y);
 		int neighbourSymbolIndex = selectedSymbolIndex - 1;
+		if(neighbourSymbolIndex < 0) neighbourSymbolIndex = [symbols maxIndex];
+		
 		neighbourSymbolIndex = neighbourSymbolIndex % [symbols size];
 		[neighbourCard setSymbol: neighbourSymbolIndex];
 	}
@@ -140,7 +143,7 @@
 	}
 	
 	[selectedCard stopAllActions];
-	[selectedCard runAction: [CCMoveTo actionWithDuration:0.15 position:cardCenterLocation]];
+	[selectedCard runAction: [CCMoveTo actionWithDuration:0.1 position:cardCenterLocation]];
 }
 
 // on "dealloc" you need to release all your retained objects

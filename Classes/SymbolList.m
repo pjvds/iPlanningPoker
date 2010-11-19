@@ -63,4 +63,11 @@
 	return [innerList count];
 }
 
+-(int) maxIndex {
+	return [innerList count]-1;
+}
+
+-(int) minIndex {
+	return 0;
+}
 @end

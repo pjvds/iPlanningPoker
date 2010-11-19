@@ -1275,7 +1275,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pieter Joost van de Sande (533946FC3P)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					DEBUG,
@@ -1289,7 +1289,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator4.1;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F4C042DF-6161-4269-B3BD-F1DC81B6BB72";
+				SDKROOT = iphoneos3.2;
 			};
 			name = Debug;
 		};
@@ -1307,7 +1308,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos3.2;
 			};
 			name = Release;
 		};
