@@ -109,7 +109,7 @@
 }
 
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
-{	
+{
 	CGPoint touchPoint = [touch locationInView:[touch view]];
 	touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
 	CGPoint newPosition = ccp(touchPoint.x + whereTouch.x, selectedCard.position.y);

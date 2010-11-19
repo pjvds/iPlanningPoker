@@ -16,7 +16,6 @@
 @interface MainScene : CCLayer
 {
 @private
-	CCSprite *background;
 	Card *selectedCard;
 	Card *neighbourCard;
 	
@@ -29,7 +28,6 @@
 	BOOL isDrag;
 }
 
-// returns a Scene that contains the MainScene as the only child
 +(id) scene;
 -(void) initBackground;
 -(BOOL) isTouchOnSprite:(CGPoint)touch;

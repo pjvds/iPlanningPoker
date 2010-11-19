@@ -22,10 +22,11 @@ CCSprite *symbol;
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init] )) {
         background = [CCSprite spriteWithFile:@"CardBackground.png"];
-		background.position = ccp(background.contentSize.width / 2,background.contentSize.height / 2);
-		[self addChild: background];
-		
 		[self setContentSize: background.contentSize];
+		center = ccp(background.contentSize.width / 2, background.contentSize.height / 2);
+		
+		background.position = center;
+		[self addChild: background];
     }
     
     return self;
@@ -38,9 +39,9 @@ CCSprite *symbol;
 		}
 		
 		symbol = value;
-		symbol.position = ccp(150, 150);
-		
-		[self addChild: symbol z:5];
+		symbol.position = center;
+
+		[self addChild: symbol];
 	}
 }
 

@@ -13,7 +13,10 @@
 // MainScene Layer
 @interface Card : CCNode
 {
+@private
+	CGPoint center;
+	
 }
-
++(id) node;
 -(void) setSymbol:(CCSprite*) value;
 @end
