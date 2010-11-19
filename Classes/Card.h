@@ -22,8 +22,8 @@
 	int currentIndex;
 	
 }
-+(id) init;
--(Card*) init;
--(void) setSymbol:(CCSprite*) value;
--(CCSprite*) getSymbol;
++(id) cardWithSymbols: (SymbolList*) theSymbols;
+-(Card*) initWithSymbols: (SymbolList*) theSymbols;
+-(void) setSymbol:(int) index;
+-(int) getSymbol;
 @end
