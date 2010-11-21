@@ -226,6 +226,7 @@
 		DA098FF71296960700A9E0A3 /* half.png in Resources */ = {isa = PBXBuildFile; fileRef = DA098FEE1296960700A9E0A3 /* half.png */; };
 		DA098FF81296960700A9E0A3 /* unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = DA098FEF1296960700A9E0A3 /* unknown.png */; };
 		DA09901D1296986C00A9E0A3 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = DA09901C1296986C00A9E0A3 /* 5.png */; };
+		DA7C18F61299373B0005D451 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA7C18F51299373B0005D451 /* README.md */; };
 		DA7EDCB01290391800F14955 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7EDCAE1290391800F14955 /* Background.png */; };
 		DA7EDCB11290391800F14955 /* CardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7EDCAF1290391800F14955 /* CardBackground.png */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
@@ -469,6 +470,7 @@
 		DA098FEE1296960700A9E0A3 /* half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = half.png; sourceTree = "<group>"; };
 		DA098FEF1296960700A9E0A3 /* unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unknown.png; sourceTree = "<group>"; };
 		DA09901C1296986C00A9E0A3 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		DA7C18F51299373B0005D451 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		DA7EDCAE1290391800F14955 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		DA7EDCAF1290391800F14955 /* CardBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CardBackground.png; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -527,6 +529,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				DA7C18F51299373B0005D451 /* README.md */,
 				504DFC6810AF1739006D82FE /* LICENSE.cocos2d */,
 				504DFC6910AF1739006D82FE /* LICENSE.cocosdenshion */,
 				506EDAA3102F461B00A389B3 /* cocos2d Sources */,
@@ -1071,6 +1074,7 @@
 				DA098FF71296960700A9E0A3 /* half.png in Resources */,
 				DA098FF81296960700A9E0A3 /* unknown.png in Resources */,
 				DA09901D1296986C00A9E0A3 /* 5.png in Resources */,
+				DA7C18F61299373B0005D451 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
