@@ -23,6 +23,7 @@
 		[buffer addObject:[CCSprite spriteWithFile:@"2.png"]];
 		[buffer addObject:[CCSprite spriteWithFile:@"3.png"]];
 		[buffer addObject:[CCSprite spriteWithFile:@"5.png"]];
+		[buffer addObject:[CCSprite spriteWithFile:@"infinity.png"]];
 		
 		innerList = buffer;
 		[innerList retain];
