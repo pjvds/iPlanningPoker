@@ -120,8 +120,6 @@
 	touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
 	CGPoint newPosition = ccp(touchPoint.x + whereTouch.x, selectedCard.position.y);
 	selectedCard.position= newPosition;
-	
-	NSLog([NSString stringWithFormat:@"X=%f", newPosition.x]);
 }
 
 -(BOOL) isTouchOnSprite:(CGPoint)touch{
@@ -134,8 +132,6 @@
 	if(selectedCard.position.x < -32 || selectedCard.position.x > 32){
 		int indexOfNeighbourSymbol = [neighbourCard getSymbol];
 		selectedSymbolIndex = indexOfNeighbourSymbol;
-		
-		NSLog([NSString stringWithFormat:@"Selected=%i", selectedSymbolIndex]);
 		
 		Card *temp = selectedCard;
 		selectedCard = neighbourCard;
