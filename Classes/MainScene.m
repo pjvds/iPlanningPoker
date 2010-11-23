@@ -98,8 +98,7 @@
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-	// Do not allow a second touch.
-    if(isDrag) return NO;
+	if(isTouching) return NO;
     
 	[selectedCard stopAllActions];
 	
@@ -107,7 +106,6 @@
 	touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
 	
 	if([self isTouchOnSprite:touchPoint]){
-		isDrag=YES;
 		whereTouch=ccpSub(selectedCard.position, touchPoint);
 		return YES;
 	}
@@ -118,28 +116,51 @@
 {
 	CGPoint touchPoint = [touch locationInView:[touch view]];
 	touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
-	CGPoint newPosition = ccp(touchPoint.x + whereTouch.x, selectedCard.position.y);
-	selectedCard.position= newPosition;
+	
+	if(isDrag){
+		CGPoint newPosition = ccp(touchPoint.x + whereTouch.x, selectedCard.position.y);
+		selectedCard.position= newPosition;
+	} else {
+		if(whereTouch.x != touchPoint.x && whereTouch.y != touchPoint.y){
+			isDrag = YES;
+		}
+	}
+
 }
 
 -(BOOL) isTouchOnSprite:(CGPoint)touch{
 	return YES;
 }
 
-- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
-	isDrag=NO;
+- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {	
 	
-	if(selectedCard.position.x < -32 || selectedCard.position.x > 32){
-		int indexOfNeighbourSymbol = [neighbourCard getSymbol];
-		selectedSymbolIndex = indexOfNeighbourSymbol;
+	if(isDrag){
+		if(selectedCard.position.x < -32 || selectedCard.position.x > 32){
+			int indexOfNeighbourSymbol = [neighbourCard getSymbol];
+			selectedSymbolIndex = indexOfNeighbourSymbol;
 		
-		Card *temp = selectedCard;
-		selectedCard = neighbourCard;
-		neighbourCard = temp;
+			Card *temp = selectedCard;
+			selectedCard = neighbourCard;
+			neighbourCard = temp;
+		}
+
+		[selectedCard stopAllActions];
+		[selectedCard runAction: [CCMoveTo actionWithDuration:0.1 position:cardCenterLocation]];
 	}
-	
-	[selectedCard stopAllActions];
-	[selectedCard runAction: [CCMoveTo actionWithDuration:0.1 position:cardCenterLocation]];
+	else {
+		float d = 0.25f;
+		id firstAction = [CCOrbitCamera actionWithDuration:d/2 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:90 angleX:0 deltaAngleX:0];
+		id secondAction = [CCOrbitCamera actionWithDuration:d/2 radius:1 deltaRadius:0 angleZ:270 deltaAngleZ:90 angleX:0 deltaAngleX:0];
+		[self runAction: [CCSequence actions:
+						  firstAction,
+						  //[ImageSwapAction actionWithCard: selectedCard],
+						  secondAction,
+						  nil]];
+	}
+
+		
+	isTouching=NO;
+	isDrag=NO;
 }
 
 // on "dealloc" you need to release all your retained objects

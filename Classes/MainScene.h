@@ -25,6 +25,7 @@
 	CGPoint whereTouch;
 	CGPoint cardCenterLocation;
 	float neighbourOffset;
+	BOOL isTouching;
 	BOOL isDrag;
 }
 
