@@ -100,18 +100,23 @@ static int * const CARD_MOVE_MARGE = 20;
 	}
 }
 
-- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {	
 	if(isTouching) return NO;
     
 	[selectedCard stopAllActions];
 	
-    CGPoint touchPoint = [touch locationInView:[touch view]];
+	CGPoint touchPoint = [touch locationInView:[touch view]];
 	touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
 	
 	if([self isTouchOnSprite:touchPoint]){
+		if(selectedCard.position.x != cardCenterLocation.x) {
+			isDrag = TRUE;
+		}
+		
 		whereTouch=ccpSub(selectedCard.position, touchPoint);
 		return YES;
 	}
+	
     return NO;
 }
 
