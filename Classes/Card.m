@@ -24,7 +24,7 @@
         foreground = [CCSprite spriteWithFile:@"CardForeground.png"];
 		[self addChild: foreground];
 		
-		background = [CCSprite spriteWithFile:@"CardBackground.png"];
+		background = [CCSprite spriteWithFile:@"CardForeground.png"];
 		background.visible = NO;
 		[self addChild: background];
 		
@@ -50,6 +50,12 @@
 		symbol = [symbols get: currentIndex];
 		symbol.visible = visibleState;
 		[self addChild: symbol];
+	}
+}
+
+-(void) ensureForegroundIsUp{
+	if (flipped) {
+		[self swapToForeground];
 	}
 }
 
@@ -89,6 +95,10 @@
 
 -(int) getSymbol{
 	return currentIndex;
+}
+
+-(BOOL) isFlipped{
+	return flipped;
 }
 
 @end

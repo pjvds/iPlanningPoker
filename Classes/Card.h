@@ -29,4 +29,6 @@
 -(void) setSymbol:(int) index;
 -(int) getSymbol;
 -(void) flip;
+-(void) ensureForegroundIsUp;
+-(BOOL) isFlipped;
 @end

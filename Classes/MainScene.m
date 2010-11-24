@@ -14,6 +14,8 @@
 // MainScene implementation
 @implementation MainScene
 
+static int * const CARD_MOVE_MARGE = 20;
+
 +(id) scene
 {
 	// 'scene' is an autorelease object.
@@ -121,6 +123,7 @@
 	if(isDrag){
 		CGPoint newPosition = ccp(touchPoint.x + whereTouch.x, selectedCard.position.y);
 		selectedCard.position= newPosition;
+		NSLog(@"Position x=%f", newPosition.x);
 	} else {
 		if(whereTouch.x != touchPoint.x && whereTouch.y != touchPoint.y){
 			isDrag = YES;
@@ -136,7 +139,11 @@
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {	
 	
 	if(isDrag){
-		if(selectedCard.position.x < -32 || selectedCard.position.x > 32){
+		CGPoint touchPoint = [touch locationInView:[touch view]];
+		touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
+		int spaceMoved = (touchPoint.x - whereTouch.x);
+
+		if(spaceMoved < (-20) || spaceMoved > 20){
 			int indexOfNeighbourSymbol = [neighbourCard getSymbol];
 			selectedSymbolIndex = indexOfNeighbourSymbol;
 		
@@ -147,6 +154,10 @@
 
 		[selectedCard stopAllActions];
 		[selectedCard runAction: [CCMoveTo actionWithDuration:0.1 position:cardCenterLocation]];
+		
+		if([neighbourCard isFlipped]){
+			[neighbourCard flip];
+		}
 	}
 	else {
 		[selectedCard flip];
