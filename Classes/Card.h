@@ -16,14 +16,17 @@
 {
 @private
 	CGPoint center;
+	CCSprite *foreground;
 	CCSprite *background;
 	CCSprite *symbol;
 	SymbolList *symbols;
 	int currentIndex;
+	BOOL flipped;
 	
 }
 +(id) cardWithSymbols: (SymbolList*) theSymbols;
 -(Card*) initWithSymbols: (SymbolList*) theSymbols;
 -(void) setSymbol:(int) index;
 -(int) getSymbol;
+-(void) flip;
 @end

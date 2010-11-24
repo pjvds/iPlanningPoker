@@ -36,20 +36,19 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init] )) {
 		[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA4444];
+		[[CCDirector sharedDirector] setProjection:CCDirectorProjection2D];
 		
 		[self initBackground];
 		
 		symbols = [[SymbolList alloc] init];
 		
-		selectedCard = [Card cardWithSymbols:symbols];
-		selectedCard.position = cardCenterLocation;
+		selectedCard = [Card cardWithSymbols:symbols];	
 		
 		selectedSymbolIndex = 0;
 		[selectedCard setSymbol: selectedSymbolIndex];
 		[self addChild: selectedCard];
 		
 		neighbourCard = [Card cardWithSymbols:symbols];
-		neighbourCard.position = cardCenterLocation;
 		neighbourCard.visible = NO;
 		[self addChild: neighbourCard];
 		
@@ -59,6 +58,8 @@
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self
 											  priority:0
 											  swallowsTouches:YES];
+		
+		cardCenterLocation = selectedCard.position;
 	}
 	return self;
 }
@@ -148,16 +149,8 @@
 		[selectedCard runAction: [CCMoveTo actionWithDuration:0.1 position:cardCenterLocation]];
 	}
 	else {
-		float d = 0.25f;
-		id firstAction = [CCOrbitCamera actionWithDuration:d/2 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:90 angleX:0 deltaAngleX:0];
-		id secondAction = [CCOrbitCamera actionWithDuration:d/2 radius:1 deltaRadius:0 angleZ:270 deltaAngleZ:90 angleX:0 deltaAngleX:0];
-		[self runAction: [CCSequence actions:
-						  firstAction,
-						  //[ImageSwapAction actionWithCard: selectedCard],
-						  secondAction,
-						  nil]];
+		[selectedCard flip];
 	}
-
 		
 	isTouching=NO;
 	isDrag=NO;

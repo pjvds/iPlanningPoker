@@ -228,7 +228,7 @@
 		DA7C18F61299373B0005D451 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA7C18F51299373B0005D451 /* README.md */; };
 		DA7C190312993AA00005D451 /* infinity.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7C190212993AA00005D451 /* infinity.png */; };
 		DA7EDCB01290391800F14955 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7EDCAE1290391800F14955 /* Background.png */; };
-		DA7EDCB11290391800F14955 /* CardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7EDCAF1290391800F14955 /* CardBackground.png */; };
+		DA7EDCB11290391800F14955 /* CardForeground.png in Resources */ = {isa = PBXBuildFile; fileRef = DA7EDCAF1290391800F14955 /* CardForeground.png */; };
 		DA82890D129C574700423C12 /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = DA82890C129C574700423C12 /* coffee.png */; };
 		DA828916129C58D200423C12 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = DA828910129C58D200423C12 /* 8.png */; };
 		DA828917129C58D200423C12 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = DA828911129C58D200423C12 /* 13.png */; };
@@ -236,6 +236,8 @@
 		DA828919129C58D200423C12 /* 40.png in Resources */ = {isa = PBXBuildFile; fileRef = DA828913129C58D200423C12 /* 40.png */; };
 		DA82891A129C58D200423C12 /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = DA828914129C58D200423C12 /* 80.png */; };
 		DA82891B129C58D200423C12 /* 100.png in Resources */ = {isa = PBXBuildFile; fileRef = DA828915129C58D200423C12 /* 100.png */; };
+		DA8289B7129C6ABD00423C12 /* CardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8289B6129C6ABD00423C12 /* CardBackground.png */; };
+		DA8289BF129C6B5600423C12 /* ImageSwapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8289BE129C6B5600423C12 /* ImageSwapAction.m */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -479,7 +481,7 @@
 		DA7C18F51299373B0005D451 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		DA7C190212993AA00005D451 /* infinity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infinity.png; sourceTree = "<group>"; };
 		DA7EDCAE1290391800F14955 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
-		DA7EDCAF1290391800F14955 /* CardBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CardBackground.png; sourceTree = "<group>"; };
+		DA7EDCAF1290391800F14955 /* CardForeground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CardForeground.png; sourceTree = "<group>"; };
 		DA82890C129C574700423C12 /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
 		DA828910129C58D200423C12 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		DA828911129C58D200423C12 /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13.png; sourceTree = "<group>"; };
@@ -487,6 +489,9 @@
 		DA828913129C58D200423C12 /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 40.png; sourceTree = "<group>"; };
 		DA828914129C58D200423C12 /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80.png; sourceTree = "<group>"; };
 		DA828915129C58D200423C12 /* 100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100.png; sourceTree = "<group>"; };
+		DA8289B6129C6ABD00423C12 /* CardBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CardBackground.png; sourceTree = "<group>"; };
+		DA8289BD129C6B5600423C12 /* ImageSwapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSwapAction.h; sourceTree = "<group>"; };
+		DA8289BE129C6B5600423C12 /* ImageSwapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSwapAction.m; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -592,6 +597,8 @@
 				1F3B9A2B0EF2145700286867 /* iPlanningPokerAppDelegate.m */,
 				DA098CB7129461B300A9E0A3 /* SymbolList.h */,
 				DA098CB8129461B300A9E0A3 /* SymbolList.m */,
+				DA8289BD129C6B5600423C12 /* ImageSwapAction.h */,
+				DA8289BE129C6B5600423C12 /* ImageSwapAction.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -869,8 +876,9 @@
 			isa = PBXGroup;
 			children = (
 				DA098FE61296960700A9E0A3 /* Symbols */,
+				DA8289B6129C6ABD00423C12 /* CardBackground.png */,
+				DA7EDCAF1290391800F14955 /* CardForeground.png */,
 				DA7EDCAE1290391800F14955 /* Background.png */,
-				DA7EDCAF1290391800F14955 /* CardBackground.png */,
 				50F414EC1069373D002A0D5E /* Default.png */,
 				50F414ED1069373D002A0D5E /* fps_images.png */,
 				50F414EE1069373D002A0D5E /* Icon.png */,
@@ -1086,7 +1094,7 @@
 				50F414F11069373D002A0D5E /* fps_images.png in Resources */,
 				50F414F21069373D002A0D5E /* Icon.png in Resources */,
 				DA7EDCB01290391800F14955 /* Background.png in Resources */,
-				DA7EDCB11290391800F14955 /* CardBackground.png in Resources */,
+				DA7EDCB11290391800F14955 /* CardForeground.png in Resources */,
 				DA098FF01296960700A9E0A3 /* 0.png in Resources */,
 				DA098FF11296960700A9E0A3 /* 1.png in Resources */,
 				DA098FF31296960700A9E0A3 /* 2.png in Resources */,
@@ -1103,6 +1111,7 @@
 				DA828919129C58D200423C12 /* 40.png in Resources */,
 				DA82891A129C58D200423C12 /* 80.png in Resources */,
 				DA82891B129C58D200423C12 /* 100.png in Resources */,
+				DA8289B7129C6ABD00423C12 /* CardBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1118,6 +1127,7 @@
 				506EDC31102F528A00A389B3 /* MainScene.m in Sources */,
 				DA098BD9129326E500A9E0A3 /* Card.m in Sources */,
 				DA098CB9129461B300A9E0A3 /* SymbolList.m in Sources */,
+				DA8289BF129C6B5600423C12 /* ImageSwapAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1331,7 +1341,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pieter Joost van de Sande (533946FC3P)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = NO;
 				"GCC_THUMB_SUPPORT[arch=armv7]" = YES;
@@ -1340,7 +1350,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.2;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F4C042DF-6161-4269-B3BD-F1DC81B6BB72";
+				SDKROOT = iphoneos3.2;
 			};
 			name = Release;
 		};
