@@ -2,7 +2,7 @@
 //  main.m
 //  iPlanningPoker
 //
-//  Created by Pieter Joost van de Sande on 11/14/10.
+//  Created by Pieter Joost van de Sande on 11/26/10.
 //  Copyright Born2code.net 2010. All rights reserved.
 //
 

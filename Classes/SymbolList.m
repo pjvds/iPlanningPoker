@@ -14,31 +14,25 @@
 	self = [super init];
 	
 	if(self) {
-		NSMutableArray *buffer = [NSMutableArray array];
-		
-		CCSprite *symbolsSprite = [CCSprite spriteWithFile:@"Symbols.png"];
 		CCSpriteFrameCache *cache = [CCSpriteFrameCache sharedSpriteFrameCache];
-		[cache addSpriteFramesWithFile:@"Symbols.plist" texture: symbolsSprite];
-
+		[cache addSpriteFramesWithFile:@"Symbols.plist"];
 		
+		innerList = [[NSMutableArray array] retain];
 		
-		[buffer addObject:[[CCSprite spriteWithSpriteFrameName:@"unknown.png"] retain]];
-		[buffer addObject:[[CCSprite spriteWithSpriteFrameName:@"0.png"] retain]];
-		[buffer addObject:[cache createSpriteWithFrameName:@"half.png"]];
-		[buffer addObject:[cache createSpriteWithFrameName:@"1.png"]];
-		[buffer addObject:[cache createSpriteWithFrameName:@"2.png"]];
-		[buffer addObject:[cache createSpriteWithFrameName:@"3.png"]];
-		[buffer addObject:[cache createSpriteWithFrameName:@"5.png"]];
-		[buffer addObject:[cache createSpriteWithFrameName:@"8.png"]];
-		[buffer addObject:[cache createSpriteWithFrameName:@"13.png"]];
-		[buffer addObject:[cache createSpriteWithFrameName:@"20.png"]];
-		[buffer addObject:[cache createSpriteWithFrameName:@"40.png"]];
-		[buffer addObject:[cache createSpriteWithFrameName:@"100.png"]];
-		[buffer addObject:[cache createSpriteWithFrameName:@"infinity.png"]];
-		[buffer addObject:[cache createSpriteWithFrameName:@"coffee.png"]];
-		
-		innerList = buffer;
-		[innerList retain];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"unknown.png"]];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"0.png"]];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"half.png"]];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"1.png"]];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"2.png"]];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"3.png"]];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"5.png"]];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"8.png"]];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"13.png"]];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"20.png"]];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"40.png"]];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"100.png"]];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"infinity.png"]];
+		[innerList addObject:[CCSprite spriteWithSpriteFrameName:@"coffee.png"]];
 	}
     
     return self;
