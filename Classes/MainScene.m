@@ -69,7 +69,10 @@ static int * const CARD_MOVE_MARGE = 20;
 - (void) initBackground{
 	CGSize winSize = [[CCDirector sharedDirector] winSize];
 	
-	CCSprite* bg = [CCSprite spriteWithFile:@"Background.png"];
+	ccTexParams params = { GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT };
+	
+	CCSprite* bg = [CCSprite spriteWithFile:@"Background.png" rect:CGRectMake(0, 0, winSize.width, winSize.height)];
+	[bg.texture setTexParameters:&params];
 	bg.position = ccp(winSize.width / 2, winSize.height / 2);
 	
 	[self addChild: bg];
