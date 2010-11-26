@@ -16,20 +16,26 @@
 	if(self) {
 		NSMutableArray *buffer = [NSMutableArray array];
 		
-		[buffer addObject:[CCSprite spriteWithFile:@"unknown.png"]];
-		[buffer addObject:[CCSprite spriteWithFile:@"0.png"]];
-		[buffer addObject:[CCSprite spriteWithFile:@"half.png"]];
-		[buffer addObject:[CCSprite spriteWithFile:@"1.png"]];
-		[buffer addObject:[CCSprite spriteWithFile:@"2.png"]];
-		[buffer addObject:[CCSprite spriteWithFile:@"3.png"]];
-		[buffer addObject:[CCSprite spriteWithFile:@"5.png"]];
-		[buffer addObject:[CCSprite spriteWithFile:@"8.png"]];
-		[buffer addObject:[CCSprite spriteWithFile:@"13.png"]];
-		[buffer addObject:[CCSprite spriteWithFile:@"20.png"]];
-		[buffer addObject:[CCSprite spriteWithFile:@"40.png"]];
-		[buffer addObject:[CCSprite spriteWithFile:@"100.png"]];
-		[buffer addObject:[CCSprite spriteWithFile:@"infinity.png"]];
-		[buffer addObject:[CCSprite spriteWithFile:@"coffee.png"]];
+		CCSprite *symbolsSprite = [CCSprite spriteWithFile:@"Symbols.png"];
+		CCSpriteFrameCache *cache = [CCSpriteFrameCache sharedSpriteFrameCache];
+		[cache addSpriteFramesWithFile:@"Symbols.plist" texture: symbolsSprite];
+
+		
+		
+		[buffer addObject:[[CCSprite spriteWithSpriteFrameName:@"unknown.png"] retain]];
+		[buffer addObject:[[CCSprite spriteWithSpriteFrameName:@"0.png"] retain]];
+		[buffer addObject:[cache createSpriteWithFrameName:@"half.png"]];
+		[buffer addObject:[cache createSpriteWithFrameName:@"1.png"]];
+		[buffer addObject:[cache createSpriteWithFrameName:@"2.png"]];
+		[buffer addObject:[cache createSpriteWithFrameName:@"3.png"]];
+		[buffer addObject:[cache createSpriteWithFrameName:@"5.png"]];
+		[buffer addObject:[cache createSpriteWithFrameName:@"8.png"]];
+		[buffer addObject:[cache createSpriteWithFrameName:@"13.png"]];
+		[buffer addObject:[cache createSpriteWithFrameName:@"20.png"]];
+		[buffer addObject:[cache createSpriteWithFrameName:@"40.png"]];
+		[buffer addObject:[cache createSpriteWithFrameName:@"100.png"]];
+		[buffer addObject:[cache createSpriteWithFrameName:@"infinity.png"]];
+		[buffer addObject:[cache createSpriteWithFrameName:@"coffee.png"]];
 		
 		innerList = buffer;
 		[innerList retain];
